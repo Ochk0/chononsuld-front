@@ -6,12 +6,10 @@ import { HeroHighlightDemo } from "@/view/root/hero-highlight";
 const Main = () => {
   return (
     <div className="flex w-full h-full">
-      {/* <div className="w-[30vw]"> */}
       <div className="md:w-[20%] xl:w-[15%]">
         <SidebarLeft table={"#"} />
       </div>
       <div className="w-[70%]">
-        {/* <PieChart />; */}
         <HeroHighlightDemo />
       </div>
       <div className="md:w-[20%] xl:w-[15%]">

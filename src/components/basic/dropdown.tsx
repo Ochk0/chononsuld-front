@@ -1,15 +1,12 @@
 import { useState } from "react";
 import Select from "react-tailwindcss-select";
 
-const options = [
-  { value: "fox", label: "🦊 Fox" },
-  { value: "Butterfly", label: "🦋 Butterfly" },
-  { value: "Honeybee", label: "🐝 Honeybee" },
-];
-
-const DropDownBox = () => {
+type DropDownBoxProps = {
+  data : string | undefined
+}
+const DropDownBox = ({ data } : DropDownBoxProps ) => {
   const [animal, setAnimal] = useState(null);
-
+  console.log(data)
   const handleChange = (value: any) => {
     console.log("value:", value);
     setAnimal(value);
@@ -19,8 +16,9 @@ const DropDownBox = () => {
     <Select
       value={animal}
       onChange={handleChange}
-      options={options}
+      options={data}
       primaryColor={""}
+      placeholder='Бүгд'
     />
   );
 };

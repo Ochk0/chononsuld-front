@@ -6,36 +6,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Team",
-    href: "/team",
-    icon: UsersIcon,
-    current: false },
-  {
-    name: "Projects",
-    href: "/projects",
-    icon: FolderIcon,
-    current: false,
-  },
-  {
-    name: "Calendar",
-    href: "/calendar",
-    icon: CalendarIcon,
-    current: false,
-  },
-  {
-    name: "Documents",
-    href: "/documents",
-    icon: DocumentDuplicateIcon,
-    current: false,
-  },
-  {
-    name: "Reports",
-    href: "/reports",
-    icon: ChartPieIcon,
-    current: false,
-  },
-];
+
 const asd = [
   {
     id: 1,
