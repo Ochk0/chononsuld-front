@@ -2,11 +2,10 @@
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useRef } from "react";
-import { Pie, getDatasetAtEvent } from "react-chartjs-2";
+import {Pie, getDatasetAtEvent, Chart} from "react-chartjs-2";
 import { HeroHighlight } from "../ui/hero-highlight";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
 export const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
@@ -41,7 +40,7 @@ export function PieChart() {
   };
   return (
     <HeroHighlight>
-      <Pie data={data} ref={chartRef} onClick={onClick} />{" "}
+      <Pie data={data} ref={chartRef} onClick={onClick} />
     </HeroHighlight>
   );
 }

@@ -2,35 +2,36 @@ import {
   CalendarIcon,
   ChartPieIcon,
   DocumentDuplicateIcon,
-  FolderIcon,
+  FolderIcon, ServerStackIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Team", href: "/visualize/team", icon: UsersIcon, current: false },
+  { name: "Team",
+    href: "/team",
+    icon: UsersIcon,
+    current: false },
   {
     name: "Projects",
-    href: "/visualize/projects",
+    href: "/projects",
     icon: FolderIcon,
-    count: "12",
     current: false,
   },
   {
     name: "Calendar",
-    href: "/visualize/calendar",
+    href: "/calendar",
     icon: CalendarIcon,
-    count: "20+",
     current: false,
   },
   {
     name: "Documents",
-    href: "/visualize/documents",
+    href: "/documents",
     icon: DocumentDuplicateIcon,
     current: false,
   },
   {
     name: "Reports",
-    href: "/visualize/reports",
+    href: "/reports",
     icon: ChartPieIcon,
     current: false,
   },
@@ -39,86 +40,110 @@ const asd = [
   {
     id: 1,
     name: "Conferences",
-    path: "/conferences",
+    href: "/conferences",
     mname: "Бага хурал",
     initial: "C",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 2,
     name: "CourseSchedules",
-    path: "/courseschedules",
+    href: "/courseschedules",
     mname: "Хичээлийн хуваарь",
     initial: "C",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 3,
     name: "Curriculums",
-    path: "/curriculums",
+    href: "/curriculums",
     mname: "Бага хурал",
     initial: "C",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 4,
     name: "Enrollments",
-    path: "/enrollments",
+    href: "/enrollments",
     mname: "Сургалтын хөтөлбөрүүд",
     initial: "E",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 5,
     name: "Grades",
-    path: "/grades",
+    href: "/grades",
     mname: "Дүнгүүд",
     initial: "G",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 6,
     name: "Programs",
-    path: "/programs",
+    href: "/programs",
     mname: "Програмууд",
     initial: "P",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 7,
     name: "ProjectKeywords",
-    path: "/projectkeywords",
+    href: "/projectkeywords",
     mname: "Төслийн түлхүүр үг",
     initial: "P",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 8,
     name: "ProjectMembers",
-    path: "/projectmembers",
+    href: "/projectmembers",
     mname: "Төслийн гишүүд",
     initial: "P",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 9,
     name: "ProjectOverviews",
-    path: "/projectoverviews",
+    href: "/projectoverviews",
     mname: "Төслийн тойм",
     initial: "P",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 10,
     name: "Rooms",
-    path: "/rooms",
+    href: "/rooms",
     mname: "Өрөөнүүд",
     initial: "R",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 11,
     name: "Staffs",
-    path: "/staffs",
+    href: "/staffs",
     mname: "Ажилчид",
     initial: "S",
+    icon: ServerStackIcon,
+    current: false,
   },
   {
     id: 12,
     name: "User",
-    path: "/user",
+    href: "/user",
     mname: "Хэрэглэгчид",
     initial: "U",
+    icon: ServerStackIcon,
+    current: false,
   },
 ];
 
@@ -132,7 +157,7 @@ export default function SidebarLeft({ table }: { table: string | string[] }) {
       <div className="flex h-16 shrink-0 items-center">
         <img
           className="h-8 w-auto"
-          src="https://tailwindui.com/img/logos/mark.svg?color=white"
+          src="https://cdn-icons-png.flaticon.com/512/311/311591.png"
           alt="Your Company"
         />
       </div>
@@ -140,8 +165,8 @@ export default function SidebarLeft({ table }: { table: string | string[] }) {
         <ul role="list" className="flex flex-1 flex-col gap-y-7">
           <li>
             <ul role="list" className="-mx-2 space-y-1">
-              {navigation.map((item) => (
-                <li key={item.name}>
+              {asd.map((item) => (
+                <li key={item.id}>
                   <a
                     href={item.href}
                     className={classNames(
@@ -161,36 +186,13 @@ export default function SidebarLeft({ table }: { table: string | string[] }) {
                       aria-hidden="true"
                     />
                     {item.name}
-                    {item.count ? (
-                      <span
-                        className="ml-auto w-9 min-w-max whitespace-nowrap rounded-full bg-indigo-600 px-2.5 py-0.5 text-center text-xs font-medium leading-5 text-white ring-1 ring-inset ring-indigo-500"
-                        aria-hidden="true"
-                      >
-                        {item.count}
-                      </span>
-                    ) : null}
                   </a>
                 </li>
               ))}
             </ul>
           </li>
-          <li>
-            <ul role="list" className="-mx-2 mt-2 space-y-1"></ul>
-          </li>
-          <li className="-mx-6 mt-auto">
-            <a
-              href="#"
-              className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-white hover:bg-indigo-700"
-            >
-              <img
-                className="h-8 w-8 rounded-full bg-indigo-700"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-              <span className="sr-only">Your profile</span>
-              <span aria-hidden="true">Tom Cook</span>
-            </a>
-          </li>
+
+
         </ul>
       </nav>
     </div>

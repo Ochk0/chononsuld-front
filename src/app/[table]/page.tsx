@@ -11,7 +11,7 @@ const VisualizePage = ({ params }: { params: { table: string } }) => {
       </div>
       {/* </div> */}
       <div className="w-[70%]">
-        <PieChart />;
+        <PieChart />
       </div>
       <div className="md:w-[20%] xl:w-[15%]">
         <SidebarRight />

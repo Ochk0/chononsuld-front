@@ -10,7 +10,6 @@ const Main = () => {
       <div className="md:w-[20%] xl:w-[15%]">
         <SidebarLeft table={"#"} />
       </div>
-      {/* </div> */}
       <div className="w-[70%]">
         {/* <PieChart />; */}
         <HeroHighlightDemo />
@@ -19,6 +18,6 @@ const Main = () => {
         <SidebarRight />
       </div>
     </div>
-  );
+  )
 };
 export default Main;
