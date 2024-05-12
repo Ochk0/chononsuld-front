@@ -15,24 +15,7 @@ import Link from "next/link";
 //   return classes.filter(Boolean).join(" ");
 // }
 
-<<<<<<< HEAD
-export default function SidebarRight({}) {
-    const [data, setData] = useState<any>();
-    const [filter , setFilter] = useState<any>([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://10.2.203.44:8080/api/v1/grades/options');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const jsonData = await response.json();
-                setData(jsonData);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-=======
+
 export default function SidebarRight({
   selected,
   setSelected,
@@ -41,7 +24,6 @@ export default function SidebarRight({
   const [data, setData] = useState<any>();
   const [filter, setFilter] = useState<any>([]);
   useEffect(() => {
-    console.log(`changed: ${JSON.stringify(data)}`);
   }, [data]);
   useEffect(() => {
     const fetchData = async () => {
@@ -58,7 +40,6 @@ export default function SidebarRight({
         console.error("Error fetching data:", error);
       }
     };
->>>>>>> 7a00041bf1c5eb8e7e75231188a993dee70daa66
 
     fetchData();
   }, []);
@@ -117,8 +98,7 @@ export default function SidebarRight({
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            {/* <Button></Button> */}
-            <button onClick={(e) => onClickButton(e)}>bolchloo</button>
+            <button className='px-4 py-2 mt-4 rounded-md border-2 border-gray-200 ' onClick={(e) => onClickButton(e)}>Хайх</button>
           </ul>
         </form>
       </nav>
