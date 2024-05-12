@@ -9,6 +9,14 @@ const VisualizePage = ({ params }: { params: { table: string } }) => {
   useEffect(() => {
     console.log(`selected changed: ${JSON.stringify(selected)}`);
   }, [selected]);
+  const onClickButton = async (e: any) => {
+    e.preventDefault();
+    const request = await fetch("http://10.2.203.44:8080/api/v1/grades", {
+      method: "post",
+      body: JSON.stringify(selected),
+    });
+    const res = await request.json();
+  };
   return (
     <div className="flex w-full h-full">
       <div className="md:w-[20%] xl:w-[15%]">
@@ -18,7 +26,11 @@ const VisualizePage = ({ params }: { params: { table: string } }) => {
         <PieChart />
       </div>
       <div className="md:w-[20%] xl:w-[15%]">
-        <SidebarRight selected={selected} setSelected={setSelected} />
+        <SidebarRight
+          onClickButton={onClickButton}
+          selected={selected}
+          setSelected={setSelected}
+        />
       </div>
     </div>
   );

@@ -14,7 +14,11 @@ import {
 //   return classes.filter(Boolean).join(" ");
 // }
 
-export default function SidebarRight({ selected, setSelected }: any) {
+export default function SidebarRight({
+  selected,
+  setSelected,
+  onClickButton,
+}: any) {
   const [data, setData] = useState<any>();
   const [filter, setFilter] = useState<any>([]);
   useEffect(() => {
@@ -91,6 +95,8 @@ export default function SidebarRight({ selected, setSelected }: any) {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+            {/* <Button></Button> */}
+            <button onClick={(e) => onClickButton(e)}>bolchloo</button>
           </ul>
         </form>
       </nav>
