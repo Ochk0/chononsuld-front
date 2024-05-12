@@ -7,7 +7,7 @@ import { HeroHighlight } from "../ui/hero-highlight";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 export const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["A", "B", "C", "D", "F", "W"],
   datasets: [
     {
       label: "# of Votes",
@@ -39,8 +39,6 @@ export function PieChart() {
     console.log(getDatasetAtEvent(chartRef.current!, event));
   };
   return (
-    <HeroHighlight>
       <Pie data={data} ref={chartRef} onClick={onClick} />
-    </HeroHighlight>
   );
 }

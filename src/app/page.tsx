@@ -9,7 +9,7 @@ const Main = () => {
       <div className="md:w-[20%] xl:w-[15%]">
         <SidebarLeft table={"#"} />
       </div>
-      <div className="w-[70%]">
+      <div className="w-[70%] h-full">
         <HeroHighlightDemo />
       </div>
       <div className="md:w-[20%] xl:w-[15%]">

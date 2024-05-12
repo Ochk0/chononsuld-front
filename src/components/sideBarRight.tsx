@@ -8,18 +8,19 @@ import {
     DropdownMenuContent, DropdownMenuItem,
     DropdownMenuTrigger
 } from "@radix-ui/react-dropdown-menu";
+import Link from "next/link";
 
 // function classNames(...classes: string[]) {
 //   return classes.filter(Boolean).join(" ");
 // }
 
-export default function SidebarRight() {
+export default function SidebarRight({}) {
     const [data, setData] = useState<any>();
     const [filter , setFilter] = useState<any>([]);
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://192.168.0.112:8080/api/v1/grades/options');
+                const response = await fetch('http://10.2.203.44:8080/api/v1/grades/options');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -43,11 +44,13 @@ export default function SidebarRight() {
   return (
     <div className="flex grow flex-col gap-y-5 h-full overflow-y-auto bg-[#154185] px-6 text-indigo-200">
       <div className="flex h-16 shrink-0 items-center justify-end">
-        <img
-          className="h-8 w-auto"
-          src="https://cdn-icons-png.flaticon.com/512/311/311591.png"
-          alt="Your Company"
-        />
+          <Link href='/'>
+              <img
+                  className="h-8 w-auto cursor-pointer"
+                  src="https://cdn-icons-png.flaticon.com/512/311/311591.png"
+                  alt="Wolf Totem"
+              />
+          </Link>
       </div>
       <nav className="flex  flex-1 flex-col">
           <form className='space-y-4'>
